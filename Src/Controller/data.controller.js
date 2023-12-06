@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Data = require("../Model/data.model.js");
-router.post("", async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const data = await Data.create(req.body);
     res.send(data);
@@ -18,3 +18,5 @@ router.get("/", async (req, res) => {
     return res.status(500).send(error.message);
   }
 });
+
+module.exports = router;

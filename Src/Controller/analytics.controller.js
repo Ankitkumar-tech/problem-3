@@ -1,9 +1,9 @@
 const express = require("express");
-const router = express.router();
+const router = express.Router();
 
 const Analytics = require("../Model/analytics.model");
 
-router.post("", async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const analytics = await Analytics.create(req.body);
     res.send(analytics);
@@ -20,3 +20,4 @@ router.get("/", async (req, res) => {
     return res.status(500).send(err.message);
   }
 });
+module.exports = router;
