@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const analyticSchema = new mongoose.Schema(
   {
     name: { type: String, required: true },
-    age: { type: Number, required: true },
+    value: { type: String, required: true },
   },
   { versionKey: false, timestamps: true }
 );

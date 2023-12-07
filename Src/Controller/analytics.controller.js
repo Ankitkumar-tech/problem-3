@@ -8,7 +8,7 @@ router.post("/", async (req, res) => {
     const analytics = await Analytics.create(req.body);
     res.send(analytics);
   } catch (error) {
-    return res.status(500).send(err.message);
+    return res.status(500).send(error.message);
   }
 });
 
@@ -17,7 +17,7 @@ router.get("/", async (req, res) => {
     const analytics = await Analytics.find().lean().exec();
     res.status(201).send(analytics);
   } catch (error) {
-    return res.status(500).send(err.message);
+    return res.status(500).send(error.message);
   }
 });
 module.exports = router;
